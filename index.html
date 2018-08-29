@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Primeiro teste</title>
+</head>
+<body>
+    <div id="app">
+       <H1>{{titulo}}</H1>
+            <!-- v-if -> não mostra na tela e nem nos elements -->
+            <!-- v-show -> não mostra na tela mas mostra nos elements -->
+
+       <p v-if="status">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+       <p v-else>não existe texto</p>
+
+        <div v-if="usuario.id == 1">Id: {{usuario.id}}<br>
+        Nome: {{usuario.nome}} {{usuario.sobrenome}}
+        </div>
+        <div v-else>
+            Não existe nenhum usuário com o id 1
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                status : false,
+                titulo: "primeiro teste vue",
+
+                usuario: {
+                    id: 1,
+                    nome: "Matheus",
+                    sobrenome: "Santos"
+                }
+            }
+        });
+    </script>
+</body>
+</html>
